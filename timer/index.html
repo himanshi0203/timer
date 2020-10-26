@@ -10,6 +10,19 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="styles.fd6b61cc6c2b84baa94a.css"></head>
 <body class="mat-typography">
+  <script>
+    (function () {
+      // Retrieve the URL the user was trying to access when receiving the 404.
+      var redirect = sessionStorage.redirect;
+      // Remove the URL from sessionStorage.
+      delete sessionStorage.redirect;
+      // Check if we actually need to redirect.
+      if (redirect && redirect != location.href) {
+        // We need to redirect to the URL the user was trying to access.
+        history.replaceState(null, null, redirect);
+      }
+    })();
+  </script>
   <app-root></app-root>
 <script src="runtime.acf0dec4155e77772545.js" defer></script><script src="polyfills.35a5ca1855eb057f016a.js" defer></script><script src="main.bc6183ed08a8017ae66c.js" defer></script></body>
 </html>
